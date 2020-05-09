@@ -1,6 +1,7 @@
 @import 'config';
 @import 'menu';
 
+
 *{
     box-sizing: border-box;
 }
@@ -38,7 +39,7 @@ a{
 }
 
 header{
-    margin-top: 0;
+    
     position: fixed;
     z-index: 2;
     width: 100%;
@@ -49,8 +50,9 @@ header{
 }
 
 main{
-    margin: 4rem;
-    height: 100%;
+    // height: 100%;
+    min-height: calc(100vh-60px);
+    padding: 4rem;
     .icons{
        margin-top: 1rem; 
        a{
@@ -69,3 +71,59 @@ main{
         }
     }
 }
+
+.about-info{
+    padding-top: 20px;
+    display: grid;
+    grid-template-areas: 
+    'bio-img bio bio'
+    'education education education'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+
+.bio-image{
+    grid-area: bio-img;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: $secondary-color solid 3px;
+}
+
+.bio{
+    grid-area: bio;
+}
+
+.education{
+    grid-area: education;
+}
+
+.job1{
+    grid-area: job1;
+}
+
+.job2{
+    grid-area: job2;
+}
+
+.job3{
+    grid-area: job3;
+}
+
+.job{
+    border-bottom: $secondary-color solid 5px;
+    border-radius: 10%;
+    padding: 1rem;
+    background: lighten($primary-color,5);
+}
+
+#main-footer{
+    text-align: center;
+    padding: 1rem;
+    height: 60px;
+    background: darken($primary-color, 10);
+    color: rgb(247, 241, 241);
+}
+
+@import 'mobile';
