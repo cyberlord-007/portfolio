@@ -234,14 +234,67 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px; }
-  .projects img {
+
+.project-card {
+  background-color: transparent;
+  height: 400px;
+  width: 300px;
+  border-bottom: 5px solid #eece1a;
+  perspective: 1000px;
+  border-radius: 5%; }
+
+.inner-card {
+  border-radius: 5%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+.project-card:hover .inner-card {
+  transform: rotateY(180deg); }
+
+.front-face, .back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border-radius: 5%; }
+
+.front-face {
+  background-color: #bbb;
+  color: black; }
+  .front-face img {
+    height: 200;
     width: 100%;
-    border: 3px solid white;
-    border-radius: 2%; }
-    .projects img:hover {
-      opacity: 0.5;
-      transition: all 0.5s ease-out;
-      border-color: #eece1a; }
+    border: 3px solid white; }
+  .front-face .tags {
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.8rem; }
+    .front-face .tags .tag1 {
+      background-color: red; }
+    .front-face .tags .tag2 {
+      background-color: blue; }
+    .front-face .tags .tag3 {
+      background-color: orangered; }
+
+.back-face {
+  padding: 10px;
+  background: linear-gradient(to bottom right, yellow, orange);
+  color: white;
+  transform: rotateY(180deg); }
+  .back-face h2 {
+    color: #444;
+    font-weight: bold; }
+  .back-face p {
+    color: black; }
 
 .contact-boxes {
   display: flex;
@@ -268,10 +321,11 @@ main {
         color: #000; }
 
 .btn, .btn-dark, .btn-light {
-  display: block;
+  display: inline-block;
   padding: 0.5rem 1rem;
   border: 0;
-  margin-bottom: 0.3rem; }
+  margin-bottom: 0.3rem;
+  border: 2px solid white; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #eece1a;
     color: #000; }
@@ -282,7 +336,8 @@ main {
 
 .btn-light {
   background: #c4c4c4;
-  color: #333; }
+  color: #333;
+  font-weight: bold; }
 
 #main-footer {
   text-align: center;
@@ -357,6 +412,7 @@ main {
     height: 10vh;
     font-size: 3rem; }
   .projects {
+    padding-left: 30px;
     grid-template-columns: repeat(1, 1fr); }
   .about-info {
     align-items: center;

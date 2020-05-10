@@ -174,18 +174,76 @@ main{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
-    img{
-        width: 100%;
-        border:3px solid white;
-        border-radius: 2%;
-
-        &:hover{
-            opacity: 0.5;
-            @include easeOut();
-            border-color: $secondary-color;
-        }
     }
-}
+    .project-card{
+        background-color: transparent;
+        height: 400px;
+        width: 300px;
+        border-bottom: 5px solid $secondary-color;
+        perspective: 1000px;
+        border-radius: 5%;
+    }
+    .inner-card{
+        border-radius: 5%;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .project-card:hover .inner-card{
+        transform: rotateY(180deg);
+    }
+    .front-face,.back-face{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        border-radius: 5%;
+    }
+    .front-face{
+        img{
+            height: 200;
+            width: 100%;
+            border: 3px solid white;
+        }
+        .tags{
+                color:set-text-color($primary-color);
+                text-transform: capitalize;
+                margin: 0.2rem;
+                padding: 0.2rem 0.5rem;
+                font-size: 0.8rem;
+                border-radius: 0.8rem;
+            .tag1{
+                background-color: red;
+               
+            }
+            .tag2{
+                background-color: blue;
+            }
+            .tag3{
+                background-color: orangered;
+            }
+        }
+        background-color: #bbb;
+        color: black;
+    }
+    .back-face{
+        h2{
+            color: $primary-color;
+            font-weight: bold;
+        }
+        p{
+            color: black;
+        }
+        padding: 10px;
+        background: linear-gradient(to bottom right, yellow , orange);
+        color: white;
+        transform: rotateY(180deg);
+    }
+
 
 .contact-boxes{
     display: flex;
@@ -219,10 +277,11 @@ main{
 }
 
 .btn{
-    display: block;
+    display: inline-block;
     padding: 0.5rem 1rem;
     border: 0;
     margin-bottom: 0.3rem;
+    border: 2px solid white;
     &:hover{
         background: $secondary-color;
         color: set-text-color($secondary-color);
@@ -239,6 +298,7 @@ main{
     @extend .btn;
     background: lighten($primary-color,50);
     color: #333;
+    font-weight: bold;
 }
 
 #main-footer{
