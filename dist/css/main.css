@@ -371,7 +371,11 @@ main {
   ul.menu-nav,
   div.menu-picture {
     float: none;
-    width: 100%; }
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-picture.show {
+      transform: translate3d(0, 0, 0); }
   .menu-nav {
     height: 75vh;
     transform: translate3d(-100%, 0, 0);
@@ -383,47 +387,23 @@ main {
       height: 100px;
       width: 100px; }
   .about-info {
-    align-items: center;
-    text-align: center;
     grid-template-areas: 'bio-img' 'bio' 'education' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
   .bio-image {
     height: 150;
     width: 150; }
-  main#about h1 {
-    height: 10vh;
-    font-size: 3rem; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); }
-  main#works h1 {
-    height: 10vh;
-    font-size: 3rem; }
-  main#contact h1 {
-    height: 10vh;
-    font-size: 3rem; } }
+    grid-template-columns: repeat(2, 1fr); } }
 
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    height: 1vh;
-    line-height: 2rem;
-    font-size: 3rem; }
-  main#about h1 {
-    height: 10vh;
-    font-size: 3rem; }
-  main#works h1 {
-    height: 10vh;
-    font-size: 3rem; }
-  main#contact h1 {
-    height: 10vh;
-    font-size: 3rem; }
+@media screen and (max-width: 480px) {
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
   .projects {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center; }
-  .about-info {
-    align-items: center;
-    text-align: center;
-    grid-template-areas: 'bio-img' 'bio' 'education' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
-    .about-info .job s ul {
-      text-align: center;
-      justify-content: center; } }
+  .projects {
+    grid-template-columns: repeat(1, 1fr); } }
