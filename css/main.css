@@ -416,12 +416,9 @@ main {
     height: 10vh;
     font-size: 3rem; }
   .projects {
-    padding-left: 30px;
     grid-template-columns: repeat(1, 1fr); }
   .about-info {
     align-items: center;
     text-align: center;
     grid-template-areas: 'bio-img' 'bio' 'education' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; }
-  .bio-image {
-    margin-left: 55px; } }
+    grid-template-columns: 1fr; } }
