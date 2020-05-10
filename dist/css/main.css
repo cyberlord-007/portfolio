@@ -404,7 +404,8 @@ main {
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    height: 10vh;
+    height: 1vh;
+    line-height: 2rem;
     font-size: 3rem; }
   main#about h1 {
     height: 10vh;
@@ -416,9 +417,13 @@ main {
     height: 10vh;
     font-size: 3rem; }
   .projects {
-    grid-template-columns: repeat(1, 1fr); }
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center; }
   .about-info {
     align-items: center;
     text-align: center;
     grid-template-areas: 'bio-img' 'bio' 'education' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+    .about-info .job s ul {
+      text-align: center;
+      justify-content: center; } }

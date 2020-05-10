@@ -101,9 +101,9 @@
         height: 10vh;
         font-size: 3rem;
     }
-    .projects{
-        
+    .projects{   
         grid-template-columns: repeat(1,1fr);
+        align-items: center;
     }
     .about-info{
         align-items: center;
@@ -116,6 +116,12 @@
         'job2'
         'job3';
         grid-template-columns: 1fr;
+        .job{s
+            ul{
+                text-align: center;
+                justify-content: center;
+            }
+        }
     }
    
 }
