@@ -243,7 +243,10 @@ main{
         color: white;
         transform: rotateY(180deg);
     }
-
+.card-image{
+    height: 250px;
+    width: 300px;
+}
 
 .contact-boxes{
     display: flex;

@@ -296,6 +296,10 @@ main {
   .back-face p {
     color: black; }
 
+.card-image {
+  height: 250px;
+  width: 300px; }
+
 .contact-boxes {
   display: flex;
   flex-wrap: wrap;
