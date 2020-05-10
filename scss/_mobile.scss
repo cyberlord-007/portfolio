@@ -86,6 +86,7 @@
 @include mediaSm{
     main#home h1{
         height: 10vh;
+        line-height: 2rem;
         font-size: 3rem;
     }
     main#about h1{
@@ -101,7 +102,7 @@
         font-size: 3rem;
     }
     .projects{
-        padding-left: 30px;
+        
         grid-template-columns: repeat(1,1fr);
     }
     .about-info{
@@ -116,7 +117,5 @@
         'job3';
         grid-template-columns: 1fr;
     }
-    .bio-image{
-        margin-left: 55px ;
-    }
+   
 }
